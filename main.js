@@ -171,6 +171,8 @@
 				element.className = '';
 			}
 		}
+
+		hide.className = 'not-show';
 	});
 
 	document.getElementById('solve').addEventListener('click', function(event) {
@@ -185,11 +187,11 @@
 			}
 		});
 
-		hide.classList.remove('not-show');
+		hide.className = '';
 	});
 
 	hide.addEventListener('click', function(event) {
-		this.classList.add('not-show');
+		this.className = 'not-show';
 
 		cells.forEach(function(e, i) {
 			e.classList.remove('yellow');
@@ -233,7 +235,8 @@
 				alert('You won!');
 
 				cells.forEach(function(e, i) {
-					e.classList.remove('solver');
+					e.className = '';
+					hide.className = 'not-show';
 				});
 			}
 		});
